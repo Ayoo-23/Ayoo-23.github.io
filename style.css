@@ -10,6 +10,10 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+
+/*Transition de jiggle*/
+     transition: transform 0.1s ease-out;
+    transform-origin: center;
 }
 
 header {
