@@ -108,7 +108,7 @@ footer blockquote {
         gap: 1rem;
     }
 }
-
+/* link thingy */
 .fancy-link {
     position: relative;
     font-weight: 600;
@@ -140,14 +140,21 @@ footer blockquote {
 }
 
 body {
-    background: linear-gradient(120deg, #0a0f14, #131a22, #0a0f14);
-    background-size: 300% 300%;
-    animation: softGradient 18s ease infinite;
-    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f2f4f7; /* slight soft - color # */
+    transition: background 0.4s ease;
 }
 
-@keyframes softGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+section {
+    position: relative;
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease;
 }
+
+section:hover {
+    backdrop-filter: blur(2px);
+}
+
+
