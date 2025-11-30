@@ -1,8 +1,20 @@
-# Mohamed's Portfolio
+![made-with-❤-love](https://github.com/user-attachments/assets/2c50acb7-aee6-4f40-a569-3b4bc487c4b1)![made-with-html-js-css](https://github.com/user-attachments/assets/65f34622-4483-4095-bbc3-24c075b8f626) 
 
-Ceci est mon site web personnel présentant mes projets, mes compétences et mon expérience.
+# 🌐 Portfolio de Mohamed
 
-Conçu avec HTML, CSS et un peu de JavaScript.
-Le site est ici: [https://Ayoo-23.github.io](https://Ayoo-23.github.io)
+Bienvenue sur mon portfolio personnel !
+Vous y trouverez une sélection de mes projets, ainsi qu’un aperçu de mes compétences et de mon parcours.
 
-Enjoy ;)
+## 🚀 Languages de codes utilisées :
+
+HTML
+
+CSS
+
+JavaScript
+
+#### 🔗 Consultez le site ici :
+
+👉 https://Ayoo-23.github.io
+
+Enjoy :)
