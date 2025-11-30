@@ -157,4 +157,79 @@ section:hover {
     backdrop-filter: blur(2px);
 }
 
+/* Dark Mode Variables */
+:root {
+  --bg-primary: #f2f4f7;
+  --bg-secondary: #ffffff;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --accent: #0077cc;
+  --border: #ddd;
+}
 
+[data-theme="dark"] {
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --text-primary: #f7fafc;
+  --text-secondary: #e2e8f0;
+  --accent: #63b3ed;
+  --border: #4a5568;
+}
+
+/* Apply vars 2 elements */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.4s ease;
+}
+
+header {
+  background-color: var(--bg-secondary);
+}
+
+.project {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.skills-list li {
+  background-color: var(--accent);
+}
+
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.fancy-link {
+  color: var(--accent);
+}
+
+.fancy-link:hover {
+  color: var(--accent);
+  filter: brightness(0.8);
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--accent);
+  padding: 10px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+.moon { display: none; }
+
+[data-theme="dark"] .sun { display: none; }
+[data-theme="dark"] .moon { display: block; }
