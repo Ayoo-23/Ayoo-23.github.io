@@ -27,33 +27,37 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// === DARK MODE === //
-const toggleTheme = () => {
+// DARK MODE 
+
+// Crée le bouton immédiatement
+const toggleBtn = document.createElement('button');
+toggleBtn.className = 'theme-toggle';
+toggleBtn.innerHTML = '<span class="sun">☀️</span><span class="moon">🌙</span>';
+document.body.appendChild(toggleBtn);
+
+// Fonct. for theme change
+function toggleTheme() {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-};
+    console.log('Theme changed to:', newTheme);
+}
 
-const initTheme = () => {
+// Init theme on load
+function initTheme() {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
         document.documentElement.setAttribute('data-theme', 'dark');
     }
-};
+    console.log('Theme initialized');
+}
 
-// === INIIT. DARK MODE === //
-document.addEventListener('DOMContentLoaded', () => {
-    // Init theme
-    initTheme();
-    
-    // Create toggle btn
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'theme-toggle';
-    toggleBtn.innerHTML = '<span class="sun">☀️</span><span class="moon">🌙</span>';
-    toggleBtn.addEventListener('click', toggleTheme);
-    document.body.appendChild(toggleBtn);
-});
+// event click on button
+toggleBtn.addEventListener('click', toggleTheme);
+
+// them init
+initTheme();
