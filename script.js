@@ -44,3 +44,16 @@ const initTheme = () => {
         document.documentElement.setAttribute('data-theme', 'dark');
     }
 };
+
+// === INIIT. DARK MODE === //
+document.addEventListener('DOMContentLoaded', () => {
+    // Init theme
+    initTheme();
+    
+    // Create toggle btn
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'theme-toggle';
+    toggleBtn.innerHTML = '<span class="sun">☀️</span><span class="moon">🌙</span>';
+    toggleBtn.addEventListener('click', toggleTheme);
+    document.body.appendChild(toggleBtn);
+});
