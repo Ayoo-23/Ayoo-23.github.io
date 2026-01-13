@@ -29,10 +29,10 @@ window.addEventListener('scroll', () => {
 
 // DARK MODE 
 
-// Crée le bouton immédiatement
+// Creates vbutton
 const toggleBtn = document.createElement('button');
 toggleBtn.className = 'theme-toggle';
-toggleBtn.innerHTML = '<span class="sun">☀️</span><span class="moon">🌙</span>';
+toggleBtn.innerHTML = '<span class="sun">☼</span><span class="moon">☾⋆</span>';
 document.body.appendChild(toggleBtn);
 
 // Fonct. for theme change
