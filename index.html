@@ -1,92 +1,55 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mon Portfolio !</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
-</head>
 <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+        <span class="sun">☼</span><span class="moon">⏾</span>
+    </button>
+
     <header>
-        <nav>
+        <nav class="container">
+            <div class="logo">M.H</div>
             <ul>
-                <li><a href="#about">A propos de moi</a></li>
-                <li><a href="#projects">Mes projets</a></li>
-                <li><a href="#skills">Ce que je sais</a></li>
-                <li><a href="#contact">Me contacter</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <h1>Mohamed H.</h1>
-        <p class="tagline">Developpeur | Passionné de technologie</p>
+        <div class="hero container">
+            <h1>Mohamed H.</h1>
+            <p class="tagline">Développeur & Passionné d'Innovation</p>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>A propos de moi</h2>
-        <p>étudiant passionné d'informatique, de technologies et d'innovation.</p>
-    </section>
+    <main class="container">
+        <section id="about" class="section-reveal">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-card">
+                <p>Étudiant passionné d'informatique, je me spécialise dans le développement de solutions techniques allant de l'administration système Linux à la cryptanalyse et la simulation physique.</p>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Projets</h2>
-        <div class="project">
-            <h3>Serveur Maison! - Circa 2024</h3>
-           <p>Ce projet a commencé comme une expérience personnelle avec des amis. J'ai récupéré un PC portable de 2011 inutilisé et j'ai décidé de le transformer en serveur. Bien que le matériel ne soit pas récent, son processeur i7-3780QM, son GPU intégré et ses 8 Go de RAM DDR3 étaient suffisants pour expérimenter.</p>
-
-<p>J'ai d'abord installé Ubuntu Server, qui a permis d'héberger des serveurs de jeux et de gérer des fichiers multimédias pour moi et mes amis. Malgré une certaine lenteur due à l'âge du matériel, le serveur fonctionnait de manière stable.</p>
-
-<p>Plus tard, sur les conseils d'utilisateurs expérimentés de serveurs maison, j'ai migré vers Arch Linux. Après avoir sauvegardé l'ensemble des données sur le cloud, j'ai installé Arch. La configuration a été plus longue, mais le système s'est avéré plus fluide et performant. Quelques problèmes de connectivité ont été rencontrés, mais j'ai réussi à les résoudre, ce qui m'a permis de renforcer mes compétences en administration Linux et en gestion de serveurs.</p>
-        </div>
-        <div class="project">
-        <h3>Bruteforcer en XOR! - Circa Sept. 2025</h3>
-
-        <p>J’ai développé un outil d’analyse et de cassage de chiffrements XOR à clé répétée.</p>
-        <p>Le script combine beam search, scoring fréquentiel de l’anglais, et hill-climbing adaptatif pour retrouver efficacement la clé et le texte en clair à partir d’un simple ciphertext.</p>
-        <p>Ce projet m’a permis d’approfondir mes connaissances en cryptanalyse, optimisation heuristique et manipulation d’octets en Python.</p>
-        
-        <a class="fancy-link" href="https://github.com/Ayoo-23/xor-bruteforcer" target="_blank">
-     Voir le projet XOR Brute-Forcer </a>
-        </div>
-        <div class="project">      
-        <h3> Rocket Trajectory Simulator, Projet Python! - Circa Oct. 2025</h3>
-        <p>J’ai réalisé un petit simulateur de trajectoire de fusée en Python, en utilisant des équations physiques de base comme la poussée, la gravité et la traînée. Pour comprendre et appliquer correctement les formules, je me suis beaucoup appuyé sur des ressources en ligne : Stack Overflow, des forums de physique et de mathématiques (Physics StackExchange, Math StackExchange) et différentes documentations open-source. Le code utilise NumPy, SciPy et Matplotlib, et est organisé en plusieurs modules pour rendre le projet plus clair. Ce projet m’a permis de progresser en modélisation physique, en résolution numérique et en structuration d’un petit programme scientifique.</p>
-        <a class="fancy-link" href="https://github.com/MH-Al0/rocket-trajectory-sim" target="_blank">
-     Voir le projet rocket-trajectory-sim </a>
-       </div>
-        <div class="project">
-            
-            <h3>Plugin Java 'WardenHeart'! - Circa Dec. 2025</h3>
-            <p>WardenHeart est un module serveur développé en Java visant à enrichir l’expérience de jeu en introduisant un système dynamique de récompenses lié à la réalisation d’événements rares et difficiles. Le projet met en œuvre une détection d’événements avancée, une gestion personnalisable des récompenses persistantes et temporaires, ainsi qu’un système de configuration entièrement basé sur YAML pour permettre une intégration flexible dans différents environnements. Cette solution démontre une maîtrise des API serveur, de la gestion d’événements en temps réel et de la conception de fonctionnalités extensibles orientées gameplay.</p>
-            <a class="fancy-link" href="https://github.com/MH-Al0/WardenHeart" target= "_blank">
-                Voir le projet WardenHeart</a>
-        </div>
-        <div class="project">
-            
-            <h3>Mod Java 'HammerBan' ! - Circa Fev. 2026</h3>
-            <p>HammerBan est une modification du jeu "Minecraft", fais en Java, il est coté serveur. De façon simple, c'est un mod qui punit le joueur pour chaque mort sur le jeu, selon la façon dont il est mort..</p>
-            <a class="fancy-link" href="https://modrinth.com/mod/hammerban" target= "_blank">
-                Voir le projet WardenHeart</a>
-        </div>
-        <!-- Add more projects -->
-    </section>
-
-    <section id="skills">
-        <h2>Ce que je sais</h2>
-        <ul class="skills-list">
-            <li>Très bon en language de code Python, JavaScript, HTML, CSS et débutant en Java.</li>
-            <li>Expérimenté en recherche et réparation de problèmes, qu'ils soient physiques sur un ordinateur défaillant ou informatique sur un projet de groupe.</li>
-            <li>Capable de configurer et gérer des serveurs Linux et des projets personnels, avec un sens de l'organisation et de la rigueur.</li> 
-            <li>Polyglotte : Je sais lire et parler couramment le Français et l'Anglais. Je sais parler l'Arabe Vernaculaire.</li>
-            <!-- Add more skills -->
-        </ul>
-    </section>
+        <section id="projects">
+            <h2 class="section-title">Projets Sélectionnés</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-info">
+                        <span class="project-date">2025</span>
+                        <h3>Bruteforcer en XOR</h3>
+                        <p>Analyse et cassage de chiffrements XOR à clé répétée via beam search et scoring fréquentiel.</p>
+                        <div class="project-tags">
+                            <span>Python</span><span>Cryptographie</span><span>Heuristique</span>
+                        </div>
+                        <a class="fancy-link" href="https://github.com/Ayoo-23/xor-bruteforcer" target="_blank">Explorer le code →</a>
+                    </div>
+                </article>
+                </div>
+        </section>
+    </main>
 
     <footer id="contact">
-        <h2>Contact</h2>
-        <p>Email: MohamedH.Pro@mail.com</p>
-        <p> GitHub: MH-Al0</p>
-        <blockquote>"La connaissance n'a aucune valeur si vous ne la mettez pas en pratique." — Anton Chekhov</blockquote>
+        <div class="container">
+            <h2>Discutons ensemble</h2>
+            <p>MohamedH.Pro@mail.com | GitHub: MH-Al0</p>
+            <blockquote class="quote">"La connaissance n'a aucune valeur si vous ne la mettez pas en pratique."</blockquote>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
-</html>
