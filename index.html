@@ -1,55 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed H. | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
 <body>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
-        <span class="sun">☼</span><span class="moon">⏾</span>
-    </button>
-
-    <header>
-        <nav class="container">
-            <div class="logo">M.H</div>
+    <div class="background-glow"></div>
+    
+    <nav>
+        <div class="nav-container">
+            <div class="logo">M<span>.</span>H</div>
             <ul>
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-        <div class="hero container">
-            <h1>Mohamed H.</h1>
-            <p class="tagline">Développeur & Passionné d'Innovation</p>
+            <button id="theme-toggle" aria-label="Toggle Theme">⏾</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1 class="reveal">Mohamed H<span>.</span></h1>
+            <p class="tagline reveal">Développeur & Explorateur de Systèmes</p>
         </div>
     </header>
 
     <main class="container">
-        <section id="about" class="section-reveal">
-            <h2 class="section-title">À propos de moi</h2>
-            <div class="about-card">
-                <p>Étudiant passionné d'informatique, je me spécialise dans le développement de solutions techniques allant de l'administration système Linux à la cryptanalyse et la simulation physique.</p>
+        <section id="about" class="reveal">
+            <div class="glass-card about-content">
+                <h2>À propos</h2>
+                <p>Étudiant passionné d'informatique, spécialisé dans l'innovation technique et l'administration système. Mon approche mélange rigueur scientifique et créativité logicielle.</p>
             </div>
         </section>
 
         <section id="projects">
-            <h2 class="section-title">Projets Sélectionnés</h2>
+            <h2 class="section-title reveal">Projets Sélectionnés</h2>
             <div class="project-grid">
-                <article class="project-card">
-                    <div class="project-info">
-                        <span class="project-date">2025</span>
-                        <h3>Bruteforcer en XOR</h3>
-                        <p>Analyse et cassage de chiffrements XOR à clé répétée via beam search et scoring fréquentiel.</p>
-                        <div class="project-tags">
-                            <span>Python</span><span>Cryptographie</span><span>Heuristique</span>
-                        </div>
-                        <a class="fancy-link" href="https://github.com/Ayoo-23/xor-bruteforcer" target="_blank">Explorer le code →</a>
+                <article class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <span class="date">2024</span>
+                        <h3>Serveur Maison</h3>
+                    </div>
+                    <p>Migration d'un hardware de 2011 vers une architecture Arch Linux optimisée pour le self-hosting.</p>
+                    <div class="tags">
+                        <span>Linux</span><span>Networking</span>
                     </div>
                 </article>
-                </div>
+
+                <article class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <span class="date">Sept 2025</span>
+                        <h3>XOR Brute-Forcer</h3>
+                    </div>
+                    <p>Outil de cryptanalyse utilisant le beam search et le scoring fréquentiel pour casser des chiffrements XOR.</p>
+                    <div class="tags">
+                        <span>Python</span><span>Crypto</span>
+                    </div>
+                    <a href="https://github.com/Ayoo-23/xor-bruteforcer" target="_blank" class="project-link">View Source →</a>
+                </article>
+
+                <article class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <span class="date">Oct 2025</span>
+                        <h3>Rocket Sim</h3>
+                    </div>
+                    <p>Simulateur de trajectoire basé sur NumPy/SciPy intégrant traînée atmosphérique et poussée variable.</p>
+                    <div class="tags">
+                        <span>Physics</span><span>Python</span>
+                    </div>
+                    <a href="https://github.com/MH-Al0/rocket-trajectory-sim" target="_blank" class="project-link">View Source →</a>
+                </article>
+
+                <article class="project-card glass-card reveal">
+                    <div class="project-header">
+                        <span class="date">Dec 2025</span>
+                        <h3>WardenHeart</h3>
+                    </div>
+                    <p>Module serveur Java de récompenses dynamiques avec gestion d'événements temps réel et config YAML.</p>
+                    <div class="tags">
+                        <span>Java</span><span>API</span>
+                    </div>
+                    <a href="https://github.com/MH-Al0/WardenHeart" target="_blank" class="project-link">View Source →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
+            <h2 class="section-title">Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item glass-card">Python / JS / Java</div>
+                <div class="skill-item glass-card">Admin Linux</div>
+                <div class="skill-item glass-card">Résolution de Problèmes</div>
+                <div class="skill-item glass-card">Français / Anglais / Arabe</div>
+            </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <div class="container">
-            <h2>Discutons ensemble</h2>
-            <p>MohamedH.Pro@mail.com | GitHub: MH-Al0</p>
-            <blockquote class="quote">"La connaissance n'a aucune valeur si vous ne la mettez pas en pratique."</blockquote>
+    <footer id="contact" class="reveal">
+        <div class="glass-card contact-footer">
+            <h2>Prêt à collaborer ?</h2>
+            <p>MohamedH.Pro@mail.com</p>
+            <div class="social-links">GitHub: MH-Al0</div>
+            <p class="quote">"La connaissance n'a aucune valeur si vous ne la mettez pas en pratique."</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+</html>
