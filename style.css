@@ -79,3 +79,21 @@ nav {
     color: var(--accent);
     border: 1px solid var(--border-color);
 }
+
+/* État initial caché */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* État quand le JS détecte le scroll */
+.reveal-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Transition element change */
+body, section, .project-card, nav {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
