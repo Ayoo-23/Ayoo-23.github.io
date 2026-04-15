@@ -2,7 +2,7 @@
     --bg: #0f1218;
     --card-bg: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.1);
-    --lemon: #d4ff00; /* The Glow */
+    --lemon: #d4ff00; /* glow */
     --text-main: #e2e8f0;
     --text-dim: #94a3b8;
 }
@@ -91,7 +91,7 @@ nav a:hover { color: var(--lemon); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 .skill-item { text-align: center; padding: 1.5rem; font-size: 0.9rem; }
 
-/* Reveal Animation Class */
+/* Animation Class */
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
