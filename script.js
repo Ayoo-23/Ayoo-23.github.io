@@ -1,4 +1,4 @@
-// Intersection Observer for Reveal on Scroll
+// inter Obs Reveal whn Scroll
 const observerOptions = {
     threshold: 0.1
 };
