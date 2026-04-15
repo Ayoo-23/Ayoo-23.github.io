@@ -1,63 +1,90 @@
-// Smooth scroll for nav
+/**
+ * GESTION DU THÈME (DARK MODE)
+ */
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+
+// Fonction pour appliquer le thème
+function applyTheme(theme) {
+    htmlElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    // Optionnel: On peut changer l'icône ici si nécessaire
+}
+
+// Initialisation au chargement
+const savedTheme = localStorage.getItem('theme') || 
+                   (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+applyTheme(savedTheme);
+
+// Événement clic
+themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+});
+
+/**
+ * NAVIGATION FLUIDE (SMOOTH SCROLL)
+ */
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 80, // Offset pour la nav collée
+                behavior: 'smooth'
+            });
+        }
     });
 });
 
-// optional highlight on scroll
+/**
+ * ANIMATIONS D'APPARITION (REVEAL ON SCROLL)
+ * C'est ce qui donne l'effet "premium"
+ */
+const revealOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // On arrête d'observer une fois que c'est affiché
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, revealOptions);
+
+// On applique l'observateur aux sections et aux cartes de projets
+document.querySelectorAll('section, .project-card').forEach(el => {
+    el.classList.add('reveal-item'); // On ajoute la classe de base pour le CSS
+    revealObserver.observe(el);
+});
+
+/**
+ * HIGHLIGHT DE LA NAV AU SCROLL
+ */
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('nav a');
 
 window.addEventListener('scroll', () => {
-    let current = '';
+    let current = "";
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
+        const sectionTop = section.offsetTop - 150;
         if (pageYOffset >= sectionTop) {
             current = section.getAttribute('id');
         }
     });
+
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
+        if (link.getAttribute('href').includes(current)) {
             link.classList.add('active');
         }
     });
 });
-
-// DARK MODE 
-
-// Creates vbutton
-const toggleBtn = document.createElement('button');
-toggleBtn.className = 'theme-toggle';
-toggleBtn.innerHTML = '<span class="sun">☼</span><span class="moon">⏾</span>';
-document.body.appendChild(toggleBtn);
-
-// Fonct. for theme change
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    console.log('Theme changed to:', newTheme);
-}
-
-// Init theme on load
-function initTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    console.log('Theme initialized');
-}
-
-// event click on button
-toggleBtn.addEventListener('click', toggleTheme);
-
-// them init
-initTheme();
