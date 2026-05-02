@@ -14,39 +14,42 @@
         <div class="nav-container">
             <div class="logo">M<span>.</span>H</div>
             <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" data-i18n="navAbout">À propos</a></li>
+                <li><a href="#projects" data-i18n="navProjects">Projets</a></li>
+                <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+                <li><a href="#contact" data-i18n="navContact">Contact</a></li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle Theme">⏾</button>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <button id="lang-toggle" aria-label="Toggle Language" class="lang-btn">EN</button>
+                <button id="theme-toggle" aria-label="Toggle Theme">⏾</button>
+            </div>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
-            <h1 class="reveal">Mohamed H<span>.</span></h1>
-            <p class="tagline reveal">Développeur & Explorateur de Systèmes</p>
+            <h1 class="reveal" data-i18n="heroTitle">Mohamed H<span>.</span></h1>
+            <p class="tagline reveal" data-i18n="heroTagline">Développeur & Explorateur de Systèmes</p>
         </div>
     </header>
 
     <main class="container">
         <section id="about" class="reveal">
             <div class="glass-card about-content">
-                <h2>À propos</h2>
-                <p>Étudiant passionné d'informatique, spécialisé dans l'innovation technique et l'administration système. Mon approche mélange rigueur scientifique et créativité logicielle.</p>
+                <h2 data-i18n="aboutTitle">À propos</h2>
+                <p data-i18n="aboutText">Étudiant passionné d'informatique, spécialisé dans l'innovation technique et l'administration système. Mon approche mélange rigueur scientifique et créativité logicielle.</p>
             </div>
         </section>
 
         <section id="projects">
-            <h2 class="section-title reveal">Projets Sélectionnés</h2>
+            <h2 class="section-title reveal" data-i18n="projectsTitle">Projets Sélectionnés</h2>
             <div class="project-grid">
                 <article class="project-card glass-card reveal">
                     <div class="project-header">
                         <span class="date">2024</span>
-                        <h3>Serveur Maison</h3>
+                        <h3 data-i18n="proj1Title">Serveur Maison</h3>
                     </div>
-                    <p>Migration d'un hardware de 2011 vers une architecture Arch Linux optimisée pour le self-hosting.</p>
+                    <p data-i18n="proj1Desc">Migration d'un hardware de 2011 vers une architecture Arch Linux optimisée pour le self-hosting.</p>
                     <div class="tags">
                         <span>Linux</span><span>Networking</span>
                     </div>
@@ -55,9 +58,9 @@
                 <article class="project-card glass-card reveal">
                     <div class="project-header">
                         <span class="date">Sept 2025</span>
-                        <h3>XOR Brute-Forcer</h3>
+                        <h3 data-i18n="proj2Title">XOR Brute-Forcer</h3>
                     </div>
-                    <p>Outil de cryptanalyse utilisant le beam search et le scoring fréquentiel pour casser des chiffrements XOR.</p>
+                    <p data-i18n="proj2Desc">Outil de cryptanalyse utilisant le beam search et le scoring fréquentiel pour casser des chiffrements XOR.</p>
                     <div class="tags">
                         <span>Python</span><span>Cryptographie</span>
                     </div>
@@ -67,9 +70,9 @@
                 <article class="project-card glass-card reveal">
                     <div class="project-header">
                         <span class="date">Oct 2025</span>
-                        <h3>Rocket Sim</h3>
+                        <h3 data-i18n="proj3Title">Rocket Sim</h3>
                     </div>
-                    <p>Simulateur de trajectoire basé sur NumPy/SciPy intégrant traînée atmosphérique et poussée variable.</p>
+                    <p data-i18n="proj3Desc">Simulateur de trajectoire basé sur NumPy/SciPy intégrant traînée atmosphérique et poussée variable.</p>
                     <div class="tags">
                         <span>Physics</span><span>Python</span>
                     </div>
@@ -79,9 +82,9 @@
                 <article class="project-card glass-card reveal">
                     <div class="project-header">
                         <span class="date">Dec 2025</span>
-                        <h3>WardenHeart</h3>
+                        <h3 data-i18n="proj4Title">WardenHeart</h3>
                     </div>
-                    <p>Module serveur Java de récompenses dynamiques avec gestion d'événements temps réel et config YAML.</p>
+                    <p data-i18n="proj4Desc">Module serveur Java de récompenses dynamiques avec gestion d'événements temps réel et config YAML.</p>
                     <div class="tags">
                         <span>Java</span><span>Minecraft - Paper</span>
                     </div>
@@ -91,22 +94,22 @@
         </section>
 
         <section id="skills" class="reveal">
-            <h2 class="section-title">Expertise</h2>
+            <h2 class="section-title" data-i18n="skillsTitle">Expertise</h2>
             <div class="skills-grid">
-                <div class="skill-item glass-card">Python / JS / Java</div>
-                <div class="skill-item glass-card">Admin Linux</div>
-                <div class="skill-item glass-card">Résolution de Problèmes</div>
-                <div class="skill-item glass-card">Français / Anglais / Arabe</div>
+                <div class="skill-item glass-card" data-i18n="skill1">Python / JS / Java</div>
+                <div class="skill-item glass-card" data-i18n="skill2">Admin Linux</div>
+                <div class="skill-item glass-card" data-i18n="skill3">Résolution de Problèmes</div>
+                <div class="skill-item glass-card" data-i18n="skill4">Français / Anglais / Arabe</div>
             </div>
         </section>
     </main>
 
     <footer id="contact" class="reveal">
         <div class="glass-card contact-footer">
-            <h2>Prêt à collaborer ?</h2>
+            <h2 data-i18n="contactTitle">Prêt à collaborer ?</h2>
             <p>MohamedH.Pro@mail.com</p>
             <div class="social-links">GitHub: MH-Al0</div>
-            <p class="quote">"La connaissance n'a aucune valeur si vous ne la mettez pas en pratique."</p>
+            <p class="quote" data-i18n="contactQuote">"La connaissance n'a aucune valeur si vous ne la mettez pas en pratique."</p>
         </div>
     </footer>
 
