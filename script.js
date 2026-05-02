@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     try {
-        // init state123 for lang123
         let CurrentLanguage123 = 'fr';
 
-        // map data123 to trans123
         const TranslationsMap123 = {
             fr: {
                 navAbout: "À propos",
@@ -59,67 +57,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // init obs123 state
-        const ObserverOptions123 = {
-            threshold: 0.1
-        };
-
+        // Intersection Observer pour les animations
         const Observer123 = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, ObserverOptions123);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => Observer123.observe(el));
 
-        // trigger123 for dark/light state
+        // Thème clair/sombre
         const ThemeToggleBtn123 = document.getElementById('theme-toggle');
         ThemeToggleBtn123.addEventListener('click', () => {
             const DocElement123 = document.documentElement;
-            const currentTheme123 = DocElement123.getAttribute('data-theme');
-            const newTheme123 = currentTheme123 === 'dark' ? 'light' : 'dark';
+            const newTheme123 = DocElement123.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             DocElement123.setAttribute('data-theme', newTheme123);
             ThemeToggleBtn123.innerHTML = newTheme123 === 'dark' ? '☼' : '☾';
         });
 
-        // toggle123 state
+        // Traduction FR ↔ EN  — Bug 1 corrigé : const
         const LangToggleBtn123 = document.getElementById('lang-toggle');
-        LangToggleAction123 = () => {
+        const LangToggleAction123 = () => {
             CurrentLanguage123 = CurrentLanguage123 === 'fr' ? 'en' : 'fr';
             LangToggleBtn123.textContent = CurrentLanguage123 === 'fr' ? 'EN' : 'FR';
 
-            const ElementsToTranslate123 = document.querySelectorAll('[data-i18n]');
-            ElementsToTranslate123.forEach(el => {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
                 const Key123 = el.getAttribute('data-i18n');
                 const translation123 = TranslationsMap123[CurrentLanguage123][Key123];
                 if (translation123) {
-                    if (Key123 === 'heroTitle') {
-                        el.innerHTML = translation123;
-                    } else {
-                        el.textContent = translation123;
-                    }
+                    el.innerHTML = Key123 === 'heroTitle' ? translation123 : '';
+                    if (Key123 !== 'heroTitle') el.textContent = translation123;
                 }
             });
         };
-        LangToggleBtn123.addEventListener('click', ToggleAction123);
+        // Bug 2 corrigé : LangToggleAction123 au lieu de ToggleAction123
+        LangToggleBtn123.addEventListener('click', LangToggleAction123);
 
-        // smooth123 scroll123 action
+        // Smooth scroll
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const HrefTarget123 = this.getAttribute('href');
-                if (HrefTarget123) {
-                    document.querySelector(HrefTarget123).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+                const target = this.getAttribute('href');
+                if (target) document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
     } catch (error) {
         console.error('Operation failed:', error);
-        throw new Error('Detailed user-friendly message');
     }
 });
