@@ -17,8 +17,8 @@ CSS
 
 JavaScript
 
-#### 🔗 Website :
+#### Website :
 
-👉 https://MH-Al0.github.io
+-> https://MH-Al0.github.io
 
 Enjoy :)
