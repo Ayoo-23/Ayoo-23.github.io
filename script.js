@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ThemeToggleBtn123.innerHTML = newTheme123 === 'dark' ? '☼' : '☾';
         });
 
-        // Traduction FR ↔ EN  — Bug 1 corrigé : const
+        // Traduction FR ↔ EN  — Bug 1 (corrected)
         const LangToggleBtn123 = document.getElementById('lang-toggle');
         const LangToggleAction123 = () => {
             CurrentLanguage123 = CurrentLanguage123 === 'fr' ? 'en' : 'fr';
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         };
-        // Bug 2 corrigé : LangToggleAction123 au lieu de ToggleAction123
+        // Bug 2 (corrected)
         LangToggleBtn123.addEventListener('click', LangToggleAction123);
 
         // Smooth scroll
